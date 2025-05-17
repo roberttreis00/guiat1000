@@ -1,0 +1,32 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Turístico T1000 - Experiências Exclusivas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static  'css/style.css'%}">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="form__header">
+                <h1 class="form__title">Veja o Que a Sua Localização Oferece</h1>
+                <h2 class="form__subtitle">Informe sua localização atual para iniciarmos.</h2>
+            </div>
+            <div class="form__body">
+                {{ form.as_p }}
+                <button type="submit" class="button">Explorar Experiências</button>
+            </div>
+
+            <p>{{ response|linebreaksbr }}</p>
+        </form>
+    </div>
+</body>
+</html>
