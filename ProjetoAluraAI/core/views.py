@@ -10,7 +10,7 @@ from django.shortcuts import render
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY') # Por aqui não ta dando certo
-client = genai.Client(api_key='AIzaSyAf4TZ-kpDbBN0NbIwoIyLtrW3uaYbDl-U')
+client = genai.Client(api_key=GOOGLE_API_KEY')
 modelo = "models/gemini-2.0-flash"
 
 # Aqui que a mágica acontece:
